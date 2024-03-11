@@ -6,7 +6,7 @@ step "manual-intervention-required" {
         environments = ["production"]
         properties = {
             Octopus.Action.Manual.BlockConcurrentDeployments = "False"
-            Octopus.Action.Manual.Instructions = "Proceed?"
+            Octopus.Action.Manual.Instructions = "Do you want to proceed?"
             Octopus.Action.RunOnServer = "false"
         }
     }
@@ -381,19 +381,5 @@ step "feedback" {
             Octopus.Action.Script.Syntax = "PowerShell"
         }
         worker_pool = "hosted-ubuntu"
-    }
-}
-
-step "run-a-script" {
-    name = "Run a Script"
-
-    action {
-        action_type = "Octopus.Script"
-        properties = {
-            Octopus.Action.Script.ScriptBody = "echo \"hi\""
-            Octopus.Action.Script.ScriptSource = "Inline"
-            Octopus.Action.Script.Syntax = "PowerShell"
-        }
-        worker_pool = "hosted-windows"
     }
 }
