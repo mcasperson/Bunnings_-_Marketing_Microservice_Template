@@ -397,3 +397,17 @@ step "run-a-script" {
         worker_pool = "hosted-windows"
     }
 }
+
+step "slack-notify" {
+    name = "Slack nOtify"
+
+    action {
+        action_type = "Octopus.Script"
+        properties = {
+            Octopus.Action.Script.ScriptBody = "echo \"hi\""
+            Octopus.Action.Script.ScriptSource = "Inline"
+            Octopus.Action.Script.Syntax = "PowerShell"
+        }
+        worker_pool = "hosted-windows"
+    }
+}
