@@ -6,7 +6,7 @@ step "manual-intervention-required" {
         environments = ["production"]
         properties = {
             Octopus.Action.Manual.BlockConcurrentDeployments = "False"
-            Octopus.Action.Manual.Instructions = "Proceed?"
+            Octopus.Action.Manual.Instructions = "Proceed with the deployment."
             Octopus.Action.RunOnServer = "false"
         }
     }
